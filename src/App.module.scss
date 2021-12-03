@@ -1,0 +1,16 @@
+.needHelpButton {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border-radius: 10px 10px 0 0;
+  background-color: rgb(0, 128, 85);
+  color: aliceblue;
+  font-size: 16px;
+  width: 300px;
+  height: 40px;
+  margin-right: 20px;
+}
