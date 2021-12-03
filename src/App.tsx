@@ -1,6 +1,5 @@
 import { useState } from "react";
 import LiveChat from "./LiveChat";
-import { messages } from "./messages";
 import styles from "./App.module.scss";
 
 function App() {

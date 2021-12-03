@@ -1,7 +1,6 @@
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useState } from "react";
 import ReactDOM from "react-dom";
 
-import { messages } from "../messages";
 import styles from "./LiveChat.module.scss";
 
 type PropsType = {
@@ -14,15 +13,13 @@ export default function LiveChat({ isLiveChatOpen, onClose }: PropsType) {
   const [stateMessages, setStateMessages] = useState<string[]>([]);
 
   const onSend = () => {
-    messages.push(stateMessage);
-    setStateMessages(messages);
-    console.log(messages, stateMessages);
+    const newMessages = [...stateMessages, stateMessage];
+    setStateMessages(newMessages);
   };
 
   const handleCloseClick = () => {
     onClose();
-    messages.splice(0, messages.length);
-    setStateMessages(messages);
+    setStateMessages([]);
   };
 
   if (!isLiveChatOpen) return null;
