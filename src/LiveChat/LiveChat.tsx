@@ -15,6 +15,7 @@ export default function LiveChat({ isLiveChatOpen, onClose }: PropsType) {
   const onSend = () => {
     const newMessages = [...stateMessages, stateMessage];
     setStateMessages(newMessages);
+    setStateMessage("");
   };
 
   const handleCloseClick = () => {
@@ -52,6 +53,7 @@ export default function LiveChat({ isLiveChatOpen, onClose }: PropsType) {
           onChange={(e) => {
             setStateMessage(e.target.value);
           }}
+          value={stateMessage}
         />
         <img
           onClick={onSend}
