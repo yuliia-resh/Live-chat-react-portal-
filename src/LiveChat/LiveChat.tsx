@@ -9,13 +9,13 @@ type PropsType = {
 };
 
 export default function LiveChat({ isLiveChatOpen, onClose }: PropsType) {
-  const [stateMessage, setStateMessage] = useState("");
+  const [inputValue, setInputValue] = useState("");
   const [stateMessages, setStateMessages] = useState<string[]>([]);
 
   const onSend = () => {
-    const newMessages = [...stateMessages, stateMessage];
+    const newMessages = [...stateMessages, inputValue];
     setStateMessages(newMessages);
-    setStateMessage("");
+    setInputValue("");
   };
 
   const handleCloseClick = () => {
@@ -51,9 +51,9 @@ export default function LiveChat({ isLiveChatOpen, onClose }: PropsType) {
           type="text"
           placeholder="Type your request..."
           onChange={(e) => {
-            setStateMessage(e.target.value);
+            setInputValue(e.target.value);
           }}
-          value={stateMessage}
+          value={inputValue}
         />
         <img
           onClick={onSend}
