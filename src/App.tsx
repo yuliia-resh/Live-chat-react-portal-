@@ -9,17 +9,16 @@ function App() {
     setLiveChatOpen(true);
   };
 
+  const onCloseLiveChat = () => {
+    setLiveChatOpen(false);
+  };
+
   return (
     <div className="App">
       <button className={styles.needHelpButton} onClick={showLiveChat}>
         Need help?
       </button>
-      <LiveChat
-        isLiveChatOpen={isLiveChatOpen}
-        onClose={() => {
-          setLiveChatOpen(false);
-        }}
-      />
+      <LiveChat isLiveChatOpen={isLiveChatOpen} onClose={onCloseLiveChat} />
     </div>
   );
 }
